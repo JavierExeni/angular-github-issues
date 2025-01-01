@@ -6,11 +6,10 @@ import { IssueService } from '../../services/issue.service';
 import { IssueCommentComponent } from "../../components/issue-comment/issue-comment.component";
 
 @Component({
-  selector: 'app-issue-page',
-  standalone: true,
-  imports: [RouterLink, IssueCommentComponent],
-  templateUrl: './issue-page.component.html',
-  styles: ``,
+    selector: 'app-issue-page',
+    imports: [RouterLink, IssueCommentComponent],
+    templateUrl: './issue-page.component.html',
+    styles: ``
 })
 export default class IssuePageComponent {
   route = inject(ActivatedRoute);
@@ -23,5 +22,6 @@ export default class IssuePageComponent {
     )
   );
 
-  public issueQuery = this.issueService.issuesQuery;
+  issueQuery = this.issueService.issuesQuery;
+  issueCommentsQuery = this.issueService.issueCommentsQuery;
 }
